@@ -178,8 +178,6 @@ private:
 	// Unloading parameter
 	double beta;
 
-	// Yield strain for "ductility" computations
-	double rotY;
 
 	int printInput;
 	int YXorder;
@@ -191,7 +189,6 @@ private:
 	Vector forceLimitStates;
 	int nDefoLimitStates;
 	int nForceLimitStates;
-	//double degEnvFactor;
 	Vector degEnvArray;
 	int ndegEnvArray;
 	Vector rotYArray;
@@ -224,6 +221,27 @@ private:
 
 	double CrotMaxDuctUsed, CrotMinDuctUsed;
 	double TrotMaxDuctUsed, TrotMinDuctUsed;
+
+	// committed
+	double CdamfcPeak;
+
+	// trial
+	double TdamfcPeak;
+
+
+	// --- base peak location at the moment the peak damage was last updated (positive side) ---
+	double CrotMax_atDamPeak = 0.0;
+	double TrotMax_atDamPeak = 0.0;
+
+	// --- base peak location at the moment the peak damage was last updated (negative side) ---
+	double CrotMin_atDamPeak = 0.0;
+	double TrotMin_atDamPeak = 0.0;
+
+
+	// elastic properties
+	double KeP;
+	double KeN;
+
 
 
 
