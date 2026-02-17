@@ -126,8 +126,9 @@ find_package(HDF5 REQUIRED)
 find_package(TCL REQUIRED)
 
 if(TARGET tcl::tcl)
-
+	  
     message(STATUS "Found tcl::tcl target")
+    include_directories(${TCL_INCLUDE_DIR})
     if (TCL_INCLUDE_DIR)
         find_file(TCL_INIT_FILE init.tcl
     	    PATHS 
